@@ -25,6 +25,7 @@ struct tuple {
     std::vector<dir> dirs;
     std::string new_state;
     tuple() {
+        index = 0;
         old_state = "";
         old_syms={};
         new_syms={};
