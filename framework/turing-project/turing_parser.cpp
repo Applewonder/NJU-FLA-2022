@@ -247,6 +247,15 @@ void turing_machine::fill_delta(std::string &line,  bool is_verbose, int line_co
     }
     for (int i = 0; i < word.size(); i++) {
         //check
+        if (G.find(word[i]) == G.end()) {
+            if (is_verbose) {
+                std::cerr << "line " << line_count << " error" << std::endl;
+                exit(-1);
+            } else {
+                std::cerr << "syntax error" << std::endl;
+                exit(-1);
+            }
+        }
         cur_tuple.old_syms.push_back(word[i]);
     }
     ss >> word;
@@ -261,6 +270,26 @@ void turing_machine::fill_delta(std::string &line,  bool is_verbose, int line_co
     }
     for (int i = 0; i < word.size(); i++) {
         //check
+        if (G.find(word[i]) == G.end()) {
+            if (is_verbose) {
+                std::cerr << "line " << line_count << " error" << std::endl;
+                exit(-1);
+            } else {
+                std::cerr << "syntax error" << std::endl;
+                exit(-1);
+            }
+        }
+        if (word[i] == '*') {
+            if (cur_tuple.old_syms.at(i) != '*') {
+                if (is_verbose) {
+                    std::cerr << "line " << line_count << " error" << std::endl;
+                    exit(-1);
+                } else {
+                    std::cerr << "syntax error" << std::endl;
+                    exit(-1);
+                }
+            }
+        }
         cur_tuple.new_syms.push_back(word[i]);
     }
     ss >> word;
