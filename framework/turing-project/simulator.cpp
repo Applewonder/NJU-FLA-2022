@@ -23,7 +23,7 @@ void simulator::parse_turing(std::string tm_path, bool is_verbose) {
     }
     std::string s;
     int fill_part = 0;
-    int line_count = 0;
+    int line_count = 1;
     while (getline(infile, s))
     {
         std::string precessed_line = tm.preprocess_string(s, is_verbose, line_count);
