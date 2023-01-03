@@ -13,7 +13,7 @@ std::set<std::string> turing_machine::split_line(const std::string& strs, bool i
     int left_br = line.find("{");
     if (left_br == -1) {
         if (is_verbose) {
-            std::cerr << "line " << line_count << "error" << std::endl;
+            std::cerr << "line " << line_count << " error" << std::endl;
             exit(-1);
         } else {
             std::cerr << "syntax error" << std::endl;
@@ -24,7 +24,7 @@ std::set<std::string> turing_machine::split_line(const std::string& strs, bool i
     int right_br = line.find("}");
     if (right_br == -1) {
         if (is_verbose) {
-            std::cerr << "line " << line_count << "error" << std::endl;
+            std::cerr << "line " << line_count << " error" << std::endl;
             exit(-1);
         } else {
             std::cerr << "syntax error" << std::endl;
@@ -59,7 +59,7 @@ void turing_machine::judge_Q(std::string temp, bool is_verbose, int line_count) 
             continue;
         } else {
             if (is_verbose) {
-                std::cerr << "line " << line_count << "error" << std::endl;
+                std::cerr << "line " << line_count << " error" << std::endl;
                 exit(-1);
             } else {
                 std::cerr << "syntax error" << std::endl;
@@ -72,7 +72,7 @@ void turing_machine::judge_Q(std::string temp, bool is_verbose, int line_count) 
 void turing_machine::judge_S(char temp, bool is_verbose, int line_count) {
     if (temp == ' ' || temp == ',' || temp == ';' || temp == '{' || temp == '}' || temp == '*' || temp == '_') {
         if (is_verbose) {
-            std::cerr << "line " << line_count << "error" << std::endl;
+            std::cerr << "line " << line_count << " error" << std::endl;
             exit(-1);
         } else {
             std::cerr << "syntax error" << std::endl;
@@ -84,7 +84,7 @@ void turing_machine::judge_S(char temp, bool is_verbose, int line_count) {
 void turing_machine::judge_G(char temp, bool is_verbose, int line_count) {
     if (temp == ' ' || temp == ',' || temp == ';' || temp == '{' || temp == '}' || temp == '*') {
         if (is_verbose) {
-            std::cerr << "line " << line_count << "error" << std::endl;
+            std::cerr << "line " << line_count << " error" << std::endl;
             exit(-1);
         } else {
             std::cerr << "syntax error" << std::endl;
@@ -100,7 +100,7 @@ std::set<char> turing_machine::split_lone_line(const std::string& strs, bool is_
     int left_br = line.find("{");
     if (left_br == -1) {
         if (is_verbose) {
-            std::cerr << "line " << line_count << "error" << std::endl;
+            std::cerr << "line " << line_count << " error" << std::endl;
             exit(-1);
         } else {
             std::cerr << "syntax error" << std::endl;
@@ -111,7 +111,7 @@ std::set<char> turing_machine::split_lone_line(const std::string& strs, bool is_
     int right_br = line.find("}");
     if (right_br == -1) {
         if (is_verbose) {
-            std::cerr << "line " << line_count << "error" << std::endl;
+            std::cerr << "line " << line_count << " error" << std::endl;
             exit(-1);
         } else {
             std::cerr << "syntax error" << std::endl;
@@ -131,7 +131,7 @@ std::set<char> turing_machine::split_lone_line(const std::string& strs, bool is_
         std::string temp = p;
         if (temp.size() != 1) {
             if (is_verbose) {
-                std::cerr << "line " << line_count << "error" << std::endl;
+                std::cerr << "line " << line_count << " error" << std::endl;
                 exit(-1);
             } else {
                 std::cerr << "syntax error" << std::endl;
@@ -227,7 +227,7 @@ void turing_machine::fill_delta(std::string &line,  bool is_verbose, int line_co
     ss >> word;
     if (word.size() == 0) {
         if (is_verbose) {
-            std::cerr << "line " << line_count << "error" << std::endl;
+            std::cerr << "line " << line_count << " error" << std::endl;
             exit(-1);
         } else {
             std::cerr << "syntax error" << std::endl;
@@ -238,7 +238,7 @@ void turing_machine::fill_delta(std::string &line,  bool is_verbose, int line_co
     ss >> word;
     if (word.size() == 0) {
         if (is_verbose) {
-            std::cerr << "line " << line_count << "error" << std::endl;
+            std::cerr << "line " << line_count << " error" << std::endl;
             exit(-1);
         } else {
             std::cerr << "syntax error" << std::endl;
@@ -252,7 +252,7 @@ void turing_machine::fill_delta(std::string &line,  bool is_verbose, int line_co
     ss >> word;
     if (word.size() == 0) {
         if (is_verbose) {
-            std::cerr << "line " << line_count << "error" << std::endl;
+            std::cerr << "line " << line_count << " error" << std::endl;
             exit(-1);
         } else {
             std::cerr << "syntax error" << std::endl;
@@ -266,7 +266,7 @@ void turing_machine::fill_delta(std::string &line,  bool is_verbose, int line_co
     ss >> word;
     if (word.size() == 0) {
         if (is_verbose) {
-            std::cerr << "line " << line_count << "error" << std::endl;
+            std::cerr << "line " << line_count << " error" << std::endl;
             exit(-1);
         } else {
             std::cerr << "syntax error" << std::endl;
@@ -283,7 +283,7 @@ void turing_machine::fill_delta(std::string &line,  bool is_verbose, int line_co
             cur_tuple.dirs.push_back(dir::STAY);
         } else {
             if (is_verbose) {
-                std::cerr << "line " << line_count << "error" << std::endl;
+                std::cerr << "line " << line_count << " error" << std::endl;
                 exit(-1);
             } else {
                 std::cerr << "syntax error" << std::endl;
@@ -294,7 +294,7 @@ void turing_machine::fill_delta(std::string &line,  bool is_verbose, int line_co
     ss >> word;
     if (word.size() == 0) {
         if (is_verbose) {
-            std::cerr << "line " << line_count << "error" << std::endl;
+            std::cerr << "line " << line_count << " error" << std::endl;
             exit(-1);
         } else {
             std::cerr << "syntax error" << std::endl;
